@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "GJ GAME API",
-    "path": "folders/Scripts/GJ GAME API.yy",
+    "path": "folders/FrostJolt Library/GJ GAME API.yy",
   },
 }

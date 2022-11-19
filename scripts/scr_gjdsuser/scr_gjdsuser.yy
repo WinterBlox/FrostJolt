@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "Data Stores",
-    "path": "folders/Scripts/GJ GAME API/Data Stores.yy",
+    "path": "folders/FrostJolt Library/GJ GAME API/Data Stores.yy",
   },
 }
