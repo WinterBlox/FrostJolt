@@ -9,6 +9,7 @@
     {"id":{"name":"scr_gjsessionfuncs","path":"scripts/scr_gjsessionfuncs/scr_gjsessionfuncs.yy",},"order":3,},
     {"id":{"name":"scr_gjdsglobal","path":"scripts/scr_gjdsglobal/scr_gjdsglobal.yy",},"order":0,},
     {"id":{"name":"scr_gjtrophyfuncs","path":"scripts/scr_gjtrophyfuncs/scr_gjtrophyfuncs.yy",},"order":4,},
+    {"id":{"name":"scr_gjscoreboardfuncs","path":"scripts/scr_gjscoreboardfuncs/scr_gjscoreboardfuncs.yy",},"order":6,},
     {"id":{"name":"obj_gjhandler","path":"objects/obj_gjhandler/obj_gjhandler.yy",},"order":2,},
     {"id":{"name":"scr_gjdsuser","path":"scripts/scr_gjdsuser/scr_gjdsuser.yy",},"order":1,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
