@@ -3,10 +3,10 @@ function gj_scores_get_tables()
 {
 	if global.gj_isoccupied == false
 	{
-		var unhashed = "https://api.gamejolt.com/api/game/v1_2/scores/tables/?game_id=" + string(GJ_GAMEID) + GJ_KEY
+		var unhashed = "https://api.gamejolt.com/api/game/v1_2/scores/tables/?game_id=" + string(global.gameid) + global.key
 		var hashed = md5_string_utf8(unhashed);
 	
-		var response = http_get("https://api.gamejolt.com/api/game/v1_2/scores/tables/?game_id=" + string(GJ_GAMEID) + "&signature=" + string(hashed));
+		var response = http_get("https://api.gamejolt.com/api/game/v1_2/scores/tables/?game_id=" + string(global.gameid) + "&signature=" + string(hashed));
 	}
 }
 
@@ -15,10 +15,10 @@ function gj_scores_fetch()
 {
 	if global.gj_isoccupied == false
 	{
-		var unhashed = "https://api.gamejolt.com/api/game/v1_2/scores/?game_id=" + string(GJ_GAMEID) + GJ_KEY
+		var unhashed = "https://api.gamejolt.com/api/game/v1_2/scores/?game_id=" + string(global.gameid) + global.key
 		var hashed = md5_string_utf8(unhashed);
 	
-		var response = http_get("https://api.gamejolt.com/api/game/v1_2/scores/?game_id=" + string(GJ_GAMEID) + "&signature=" + string(hashed));
+		var response = http_get("https://api.gamejolt.com/api/game/v1_2/scores/?game_id=" + string(global.gameid) + "&signature=" + string(hashed));
 	}
 }
 
@@ -29,10 +29,10 @@ function gj_scores_add(_val, _sortval)
 {
 	if global.gj_isoccupied == false
 	{
-		var unhashed = "https://api.gamejolt.com/api/game/v1_2/scores/add/?game_id=" + string(GJ_GAMEID) + "&score=" + string(_val) + "&sort=" + string(_sortval) + GJ_KEY
+		var unhashed = "https://api.gamejolt.com/api/game/v1_2/scores/add/?game_id=" + string(global.gameid) + "&score=" + string(_val) + "&sort=" + string(_sortval) + global.key
 		var hashed = md5_string_utf8(unhashed);
 	
-		var response = http_get("https://api.gamejolt.com/api/game/v1_2/scores/add/?game_id=" + string(GJ_GAMEID) + "&score=" + string(_val) + "&sort=" + string(_sortval) + "&signature=" + string(hashed));
+		var response = http_get("https://api.gamejolt.com/api/game/v1_2/scores/add/?game_id=" + string(global.gameid) + "&score=" + string(_val) + "&sort=" + string(_sortval) + "&signature=" + string(hashed));
 	}
 }
 /// @desc Returns the rank of a particular score on a score table.
@@ -46,17 +46,17 @@ function gj_scores_getrank(_sortval)
 		
 		if global.gj_isoccupied == false
 		{
-			var unhashed = "https://api.gamejolt.com/api/game/v1_2/scores/get-rank/?game_id=" + string(GJ_GAMEID) + "&sort=" + string(_sortval) + "&table_id=" + string(_table_id) + GJ_KEY
+			var unhashed = "https://api.gamejolt.com/api/game/v1_2/scores/get-rank/?game_id=" + string(global.gameid) + "&sort=" + string(_sortval) + "&table_id=" + string(_table_id) + global.key
 			var hashed = md5_string_utf8(unhashed);
 	
-			var response = http_get("https://api.gamejolt.com/api/game/v1_2/scores/get-rank/?game_id=" + string(GJ_GAMEID) + "&sort=" + string(_sortval) + "&table_id=" + string(_table_id) + "&signature=" + string(hashed));
+			var response = http_get("https://api.gamejolt.com/api/game/v1_2/scores/get-rank/?game_id=" + string(global.gameid) + "&sort=" + string(_sortval) + "&table_id=" + string(_table_id) + "&signature=" + string(hashed));
 		}	
 	} else 
 	{
-		var unhashed = "https://api.gamejolt.com/api/game/v1_2/scores/get-rank/?game_id=" + string(GJ_GAMEID) + "&sort=" + string(_sortval) + GJ_KEY
+		var unhashed = "https://api.gamejolt.com/api/game/v1_2/scores/get-rank/?game_id=" + string(global.gameid) + "&sort=" + string(_sortval) + global.key
 		var hashed = md5_string_utf8(unhashed);
 	
-		var response = http_get("https://api.gamejolt.com/api/game/v1_2/scores/get-rank/?game_id=" + string(GJ_GAMEID) + "&sort=" + string(_sortval) + "&signature=" + string(hashed));
+		var response = http_get("https://api.gamejolt.com/api/game/v1_2/scores/get-rank/?game_id=" + string(global.gameid) + "&sort=" + string(_sortval) + "&signature=" + string(hashed));
 	}
 }
 

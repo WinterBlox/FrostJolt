@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "SETUP_HERE",
+  "name": "scr_gjdatastore",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "FrostJolt Library",
-    "path": "folders/FrostJolt Library.yy",
+    "name": "Data Stores",
+    "path": "folders/FrostJolt Library/GJ GAME API/Data Stores.yy",
   },
 }

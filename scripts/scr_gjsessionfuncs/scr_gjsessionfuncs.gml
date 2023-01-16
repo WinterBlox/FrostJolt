@@ -5,10 +5,10 @@ function gj_session_open(_username, _user_token)
 {
 	if global.gj_isoccupied == false
 	{
-		var unhashed = "https://api.gamejolt.com/api/game/v1_2/sessions/open/?game_id=" + string(GJ_GAMEID) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + GJ_KEY
+		var unhashed = "https://api.gamejolt.com/api/game/v1_2/sessions/open/?game_id=" + string(global.gameid) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + global.key
 		var hashed = md5_string_utf8(unhashed);
 	
-		var response = http_get("https://api.gamejolt.com/api/game/v1_2/sessions/open/?game_id=" + string(GJ_GAMEID) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + "&signature=" + string(hashed));
+		var response = http_get("https://api.gamejolt.com/api/game/v1_2/sessions/open/?game_id=" + string(global.gameid) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + "&signature=" + string(hashed));
 	}	
 }
 
@@ -24,19 +24,19 @@ function gj_session_ping(_username, _user_token)
 		
 		if global.gj_isoccupied == false
 		{
-			var unhashed = "https://api.gamejolt.com/api/game/v1_2/sessions/ping/?game_id=" + string(GJ_GAMEID) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + "&status=" + string(_state) + GJ_KEY
+			var unhashed = "https://api.gamejolt.com/api/game/v1_2/sessions/ping/?game_id=" + string(global.gameid) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + "&status=" + string(_state) + global.key
 			var hashed = md5_string_utf8(unhashed);
 	
-			var response = http_get("https://api.gamejolt.com/api/game/v1_2/sessions/ping/?game_id=" + string(GJ_GAMEID) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + "&status=" + string(_state) + "&signature=" + string(hashed));
+			var response = http_get("https://api.gamejolt.com/api/game/v1_2/sessions/ping/?game_id=" + string(global.gameid) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + "&status=" + string(_state) + "&signature=" + string(hashed));
 		}	
 	} else
 	{
 		if global.gj_isoccupied == false
 		{
-			var unhashed = "https://api.gamejolt.com/api/game/v1_2/sessions/ping/?game_id=" + string(GJ_GAMEID) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + GJ_KEY
+			var unhashed = "https://api.gamejolt.com/api/game/v1_2/sessions/ping/?game_id=" + string(global.gameid) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + global.key
 			var hashed = md5_string_utf8(unhashed);
 	
-			var response = http_get("https://api.gamejolt.com/api/game/v1_2/sessions/ping/?game_id=" + string(GJ_GAMEID) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + "&signature=" + string(hashed));
+			var response = http_get("https://api.gamejolt.com/api/game/v1_2/sessions/ping/?game_id=" + string(global.gameid) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + "&signature=" + string(hashed));
 		}			
 	}
 }
@@ -48,10 +48,10 @@ function gj_session_check(_username, _user_token)
 {
 	if global.gj_isoccupied == false
 	{
-		var unhashed = "https://api.gamejolt.com/api/game/v1_2/sessions/check/?game_id=" + string(GJ_GAMEID) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + GJ_KEY
+		var unhashed = "https://api.gamejolt.com/api/game/v1_2/sessions/check/?game_id=" + string(global.gameid) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + global.key
 		var hashed = md5_string_utf8(unhashed);
 	
-		var response = http_get("https://api.gamejolt.com/api/game/v1_2/sessions/check/?game_id=" + string(GJ_GAMEID) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + "&signature=" + string(hashed));
+		var response = http_get("https://api.gamejolt.com/api/game/v1_2/sessions/check/?game_id=" + string(global.gameid) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + "&signature=" + string(hashed));
 	}	
 }
 
@@ -62,10 +62,10 @@ function gj_session_close(_username, _user_token)
 {
 	if global.gj_isoccupied == false
 	{
-		var unhashed = "https://api.gamejolt.com/api/game/v1_2/sessions/close/?game_id=" + string(GJ_GAMEID) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + GJ_KEY
+		var unhashed = "https://api.gamejolt.com/api/game/v1_2/sessions/close/?game_id=" + string(global.gameid) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + global.key
 		var hashed = md5_string_utf8(unhashed);
 	
-		var response = http_get("https://api.gamejolt.com/api/game/v1_2/sessions/close/?game_id=" + string(GJ_GAMEID) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + "&signature=" + string(hashed));
+		var response = http_get("https://api.gamejolt.com/api/game/v1_2/sessions/close/?game_id=" + string(global.gameid) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + "&signature=" + string(hashed));
 	}	
 }
 
