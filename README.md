@@ -20,9 +20,7 @@ Discord Contact - WinterBlox1#3364
 
 ## DOCUMENTATION
 
-The Documentation for FrostJolt comes with the library. Look for the nte_fjdocs file!
-
-Alternatively, for more In-Depth Documentation, go to the Wiki. https://github.com/WinterBlox/FrostJolt/wiki
+For a guide on how to set-up FrostJolt for the first time, go to https://github.com/WinterBlox/FrostJolt/wiki
 
 ## INSTALLATION
 
