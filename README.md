@@ -3,7 +3,14 @@ Public Repository for FrostJolt, a Code Library for GameMaker v20229.1.51 and on
 
 ## SUMMARY
 
-FrostJolt for GameMaker LTS is a library of Functions, Scripts, Guides and Tools designed to help you set up Game Jolt's Game API with GameMaker.At the time of writing this, this library contains things for the following:UsersTrophiesData-stores
+FrostJolt for GameMaker LTS is a library of Functions, Scripts, Guides and Tools designed to help you set up Game Jolt's Game API with GameMaker.At the time of writing this, this library contains things for the following:
+
+- Data Stores (both global and user-specific)
+- Friends (fetching data about a user's friends or who they're friends with)
+- Scoreboards
+- Sessions (logging play sessions)
+- Trophies 
+- Users (authorizing and fetching info about them)
 
 But more features are coming! This library is actively being updated!
 
