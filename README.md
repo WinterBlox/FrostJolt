@@ -30,7 +30,7 @@ Alternatively, if drag and dropping doesnt work, Go to Tools > Import Local Pack
 
 ## HOW IT WORKS
 
-FrostJolt uses a relatively method of getting data from the Game Jolt Servers. Most of the functions you'll use are just the same thing with different parameters and endpoints. For example, gj_user_authorize starts off by building the body of the request that will be sent to the server, which in this case is `https://api.gamejolt.com/api/game/v1_2/users/auth/?game_id=<id here>&username=<username here>&user_token<user token here>`
+FrostJolt uses a relatively simple method of getting data from the Game Jolt Servers. Most of the functions you'll use are just the same thing with different parameters and endpoints. For example, gj_user_authorize starts off by building the body of the request that will be sent to the server, which in this case is `https://api.gamejolt.com/api/game/v1_2/users/auth/?game_id=<id here>&username=<username here>&user_token<user token here>`
 
 Once the basic request has been built, FrostJolt then appends your Private Key directly onto the end of the request. This whole string is then pumped through an MD5 (Message-Digest 5) Hashing Algorithm to generate a completely unique string of characters. Once that's done, the same request is built again, but this time the Private Key on the end is replaced with the `signature` parameter. This is a required parameter to guarantee that the request is coming from your game, and not a phony. If the signature is invalid, then the request will automatically be rejected.
 
