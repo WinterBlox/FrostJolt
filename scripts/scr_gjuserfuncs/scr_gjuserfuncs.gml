@@ -12,7 +12,7 @@ function gj_user_authorize(_username, _token)
 	}
 }
 
-/// @desc Fetches information about a Game Jolt User's Account. The account must be authorized using gj_user_authorize beforehand.
+/// @desc Fetches information about a Game Jolt User's Account.
 /// @arg {string} _username The game jolt user's username
 function gj_user_fetch(_username)
 {

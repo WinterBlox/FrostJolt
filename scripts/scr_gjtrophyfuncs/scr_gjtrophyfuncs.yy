@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "GJ GAME API",
-    "path": "folders/FrostJolt Library/GJ GAME API.yy",
+    "name": "System (no touchy)",
+    "path": "folders/FrostJolt Library/System (no touchy).yy",
   },
 }
