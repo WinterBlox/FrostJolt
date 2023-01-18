@@ -38,7 +38,7 @@ if global.logbool
 	show_debug_message("Client Request: " + string(r_url));
 	show_debug_message("HTTP Status Code: " + string(r_httpstat));
 	show_debug_message("Server Response: " + r_result);
-	show_debug_message("The server response has been parsed and is stored in global.response and the global.fj_response_backlog DS Map.")
+	show_debug_message("The server response has been parsed and is stored in global.response and the global.backlog DS Map.")
 
 	show_debug_message("-----------------------------------------------------------------------");
 }

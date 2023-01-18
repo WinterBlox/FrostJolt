@@ -22,7 +22,7 @@ function gj_trophies_fetch_unachieved(_username, _user_token)
 		var unhashed = "https://api.gamejolt.com/api/game/v1_2/trophies/?game_id=" + string(global.gameid) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + "&achieved=false" + global.key
 		var hashed = md5_string_utf8(unhashed);
 	
-		var response = http_get("https://api.gamejolt.com/api/game/v1_2/trophies/?game_id=" + string(global.gameid) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + "&signature=" + "achieved=false" + string(hashed));
+		var response = http_get("https://api.gamejolt.com/api/game/v1_2/trophies/?game_id=" + string(global.gameid) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + "&achieved=false" + "&signature=" + string(hashed));
 	}
 }
 
@@ -36,7 +36,7 @@ function gj_trophies_fetch_achieved(_username, _user_token)
 		var unhashed = "https://api.gamejolt.com/api/game/v1_2/trophies/?game_id=" + string(global.gameid) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + "&achieved=true" + global.key
 		var hashed = md5_string_utf8(unhashed);
 	
-		var response = http_get("https://api.gamejolt.com/api/game/v1_2/trophies/?game_id=" + string(global.gameid) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + "&signature=" + "achieved=true" + string(hashed));
+		var response = http_get("https://api.gamejolt.com/api/game/v1_2/trophies/?game_id=" + string(global.gameid) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + "&achieved=true" + "&signature=" + string(hashed));
 	}
 }
 
