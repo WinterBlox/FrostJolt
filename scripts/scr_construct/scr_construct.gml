@@ -10,7 +10,6 @@ function FrostJolt() constructor
 		SPECIFIC
 	}
 	
-	
 	static user = {
 		/// @desc Authorizes access to a Game Jolt User's Information. This should be called before any other user related GJ Functions are called.
 		/// @arg {string} _username The game jolt user's username
@@ -99,6 +98,49 @@ function FrostJolt() constructor
 		{
 			gj_trophies_lock(_username, _token, _trophy_id);
 		},
+	}
+		
+	static session = {
+		
+		/// @desc Opens a Game Jolt Session under the user's name.
+		/// @arg {string} _username The user's username
+		/// @arg {string} _token The user's game token
+		open : function(_username, _token)
+		{
+			gj_session_open(_username, _token);
+		},
+		
+		/// @desc Pings the Game Jolt Servers to indicate that a given session is still open. It's recommended to run this every 30 seconds or so to prevent a session from closing unexpectedly.
+		/// @arg {string} _username The user's username
+		/// @arg {string} _token The user's game token
+		/// @arg {string} [_state] The state the session should be in. Can be either "active" or "idle". (OPTIONAL)
+		ping : function(_username, _token)
+		{
+			if argument[2] != ""
+			{
+				gj_session_ping(_username, _token, argument[2]);
+			} else
+			{
+				gj_session_ping(_username, _token);
+			}
+		},
+		
+		/// @desc Checks to see if a session is open or not.
+		/// @arg {string} _username The user's username
+		/// @arg {string} _user_token The user's game token
+		check : function(_username, _token)
+		{
+			gj_session_check(_username, _token);	
+		},
+		
+		/// @desc Checks to see if a session is open or not.
+		/// @arg {string} _username The user's username
+		/// @arg {string} _user_token The user's game token
+		close : function(_username, _token)
+		{
+			gj_session_close(_username, _token)
+		}
+		
 	}
 	
 }
