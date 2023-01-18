@@ -1,6 +1,8 @@
 // Feather ignore GM2044
 
 /// @desc Fetch all of the keys for your game or user(s)'s datastore.
+/// @arg {string} [_username] The user's username
+/// @arg {string} [_token] The user's game token
 function gj_ds_fetchkeys()
 {
 	if argument[0] != "" && argument[1] != ""
@@ -28,6 +30,9 @@ function gj_ds_fetchkeys()
 }
 
 /// @desc Fetch the contents of a specific key.
+/// @arg {string} _key The name of the key you want to read data from.
+/// @arg {string} [_username] The user's username
+/// @arg {string} [_token] The user's game token
 function gj_ds_fetch(_key) 
 {
 	if argument[1] != "" && argument[2] != ""
@@ -54,6 +59,11 @@ function gj_ds_fetch(_key)
 	}
 }
 
+/// @desc Set the contents of a given key to a given value.
+/// @arg {string} _key The name of the key you want to write to
+/// @arg {string} _str The value you want to write to the key
+/// @arg {string} [_username] The user's username
+/// @arg {string} [_token] The user's game token
 function gj_ds_set(_key, _str)
 {
 	if argument[2] != "" && argument[3] != ""
@@ -80,6 +90,10 @@ function gj_ds_set(_key, _str)
 	}
 }
 
+/// @desc Destroy a key, removing it from your Data Storage entirely.
+/// @arg {string} _key The name of the key you want to destroy
+/// @arg {string} [_username] The user's username
+/// @arg {string} [_token] The user's game token
 function gj_ds_destroy(_key)
 {
 	if argument[1] != "" && argument[2] != ""

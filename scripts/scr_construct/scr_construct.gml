@@ -16,27 +16,14 @@ function FrostJolt() constructor
 		/// @arg {string} _token The user's unique Game Token
 		auth : function(_username, _token)
 		{
-			if global.gj_isoccupied == false
-			{
-				var unhashed = "https://api.gamejolt.com/api/game/v1_2/users/auth/?game_id=" + string(global.gameid) + "&username=" + string(_username) + "&user_token=" + string(_token) + global.key
-				var hashed = md5_string_utf8(unhashed);
-			
-				var response = http_get("https://api.gamejolt.com/api/game/v1_2/users/auth/?game_id=" + string(global.gameid) + "&username=" + string(_username) + "&user_token=" + string(_token) + "&signature=" + string(hashed));
-			}
+			gj_user_authorize(_username, _token);
 		},
 		
 		/// @desc Fetches information about a Game Jolt User's Account.
 		/// @arg {string} _username The game jolt user's username
 		fetch : function(_username)
 		{
-			if global.gj_isoccupied == false
-			{
-			var unhashed = "https://api.gamejolt.com/api/game/v1_2/users/fetch/?game_id=" + string(global.gameid) + "&username=" + string(_username) + global.key
-			var hashed = md5_string_utf8(unhashed);
-	
-			var response = http_get("https://api.gamejolt.com/api/game/v1_2/users/fetch/?game_id=" + string(global.gameid) + "&username=" + string(_username) + "&signature=" + string(hashed));
-		
-			}
+			gj_user_fetch(_username);
 		}
 	}
 	
@@ -70,7 +57,7 @@ function FrostJolt() constructor
 					show_debug_message("[FrostJolt] >>> Fetching specific trophy with ID " + string(argument[3]) + "...");
 				} else
 				{
-					show_debug_message("[FrostJolt] >>> ERROR: Trophy Fetch was called with the 'Specific' Filter, but no (or an invalid) trophy ID was provided. (" + string(argument[3]) + ")")	
+					show_debug_message("[FrostJolt] >>> ERROR: Trophy Fetch was called with the 'Specific' Filter, but no (or an invalid) trophy ID was provided. (" + string(argument[3]) + ")");
 				}
 				break;
 				default:
@@ -127,7 +114,7 @@ function FrostJolt() constructor
 		
 		/// @desc Checks to see if a session is open or not.
 		/// @arg {string} _username The user's username
-		/// @arg {string} _user_token The user's game token
+		/// @arg {string} _token The user's game token
 		check : function(_username, _token)
 		{
 			gj_session_check(_username, _token);	
@@ -135,12 +122,125 @@ function FrostJolt() constructor
 		
 		/// @desc Checks to see if a session is open or not.
 		/// @arg {string} _username The user's username
-		/// @arg {string} _user_token The user's game token
+		/// @arg {string} _token The user's game token
 		close : function(_username, _token)
 		{
 			gj_session_close(_username, _token)
 		}
 		
+	}
+		
+	static scores = {
+		
+		/// @desc Returns a list of high score tables for a game.
+		get_tables : function()
+		{
+			gj_scores_get_tables();	
+		},
+		
+		/// @desc Returns a list of scores either for a user or globally for a game.
+		fetch : function()
+		{
+			gj_scores_fetch();
+		},
+		
+		/// @desc Adds a score for a user or guest.
+		/// @arg {string} _val This is a string value associated with the score.
+		add : function(_val)
+		{
+			gj_scores_add(_val, _val);	
+		},
+		
+		/// @desc Returns the rank of a particular score on a score table.
+		/// @arg {string} _val The rank you want to get
+		/// @arg {string} [_table_id] The ID of the score table from which you want to get the rank. (OPTIONAL)
+		get_rank : function(_val)
+		{
+			if argument[1] != ""
+			{
+				gj_scores_getrank(_val, argument[1]);
+			} else
+			{
+				gj_scores_getrank(_val);	
+			}
+		}
+		
+	}
+		
+	static friends = {
+		
+		/// @desc With this function, you can fetch a list containing all of the IDs of the users a given user is currently friends with on Game Jolt.
+		/// @arg {string} _username The user's username
+		/// @arg {string} _token The user's game token
+		fetch : function(_username, _token)
+		{
+			gj_friends_fetch(_username, _token)	
+		}
+		
+	}
+	
+	static datastore = {
+		
+		/// @desc Fetch all of the keys for your game or user(s)'s datastore
+		/// @arg {string} [_username] The user's username
+		/// @arg {string} [_token] The user's game token
+		get_keys : function()
+		{
+			if argument[0] != "" && argument[1] != ""
+			{
+				gj_ds_fetchkeys(argument[0], argument[1]);
+			} else
+			{
+				gj_ds_fetchkeys();	
+			}
+		},
+		
+		/// @desc Fetch the contents of a specific key.
+		/// @arg {string} _key The name of the key you want to read from
+		/// @arg {string} [_username] The user's username
+		/// @arg {string} [_token] The user's game token
+		read : function(_key)
+		{
+			if argument[1] != "" && argument[2] != ""
+			{
+				gj_ds_fetch(_key, argument[1], argument[2]);
+			} else
+			{
+				gj_ds_fetch(_key);	
+			}
+		},
+
+		/// @desc Set the contents of a given key to a given value.
+		/// @arg {string} _key The name of the key you want to write to
+		/// @arg {string} _str The value you want to write to the key
+		/// @arg {string} [_username] The user's username
+		/// @arg {string} [_token] The user's game token
+		write : function(_key, _str)
+		{
+			if argument[2] != "" && argument[3] != ""
+			{
+				gj_ds_set(_key, _str, argument[2], argument[3]);
+			} else
+			{
+				gj_ds_set(_key, _str);	
+			}
+		},
+		
+		/// @desc Destroy a key, removing it from your Data Storage entirely.
+		/// @arg {string} _key The name of the key you want to destroy
+		/// @arg {string} [_username] The user's username
+		/// @arg {string} [_token] The user's game token
+		destroy : function(_key)
+		{
+			if argument[1] != "" && argument[2] != ""
+			{
+				gj_ds_destroy(_key, argument[1], argument[2]);	
+			} else
+			{
+				gj_ds_destroy(_key);	
+			}
+		}
+	
 	}
 	
 }
