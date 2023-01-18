@@ -54,7 +54,7 @@
   "androidactivityinject": "",
   "gradleinject": "",
   "androidcodeinjection": "",
-  "hasConvertedCodeInjection": false,
+  "hasConvertedCodeInjection": true,
   "ioscodeinjection": "",
   "tvoscodeinjection": "",
   "iosSystemFrameworkEntries": [],
@@ -69,7 +69,7 @@
   "iosCocoaPodDependencies": "",
   "tvosCocoaPodDependencies": "",
   "parent": {
-    "name": "Extensions",
-    "path": "folders/Extensions.yy",
+    "name": "FrostJolt Library",
+    "path": "folders/FrostJolt Library.yy",
   },
 }
