@@ -1,7 +1,7 @@
 #define ext_fj_initialize
 global.gameid = extension_get_option_value("ext_frostjolt", "GJ_GAMEID");
 global.key = extension_get_option_value("ext_frostjolt", "GJ_KEY");
-global.response = undefined;
+global.response = {}
 global.gj_isoccupied = false;
 
 if extension_get_option_value("ext_frostjolt", "GJ_MAKEBACKLOG")
