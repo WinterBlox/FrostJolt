@@ -3,6 +3,7 @@ global.gameid = extension_get_option_value("ext_frostjolt", "GJ_GAMEID");
 global.key = extension_get_option_value("ext_frostjolt", "GJ_KEY");
 global.response = {}
 global.gj_isoccupied = false;
+global.callback = undefined;
 
 if extension_get_option_value("ext_frostjolt", "GJ_MAKEBACKLOG")
 {
