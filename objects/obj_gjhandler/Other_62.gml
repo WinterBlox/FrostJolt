@@ -43,4 +43,5 @@ if global.logbool
 	show_debug_message("-----------------------------------------------------------------------");
 }
 
+global.callback();
 
