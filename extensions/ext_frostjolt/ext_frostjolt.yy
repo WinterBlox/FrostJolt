@@ -4,16 +4,21 @@
   "name": "ext_frostjolt",
   "optionsFile": "options.json",
   "options": [
-    {"resourceType":"GMExtensionOption","resourceVersion":"1.0","name":"__extOptLabel","extensionId":null,"guid":"0c41b06f-fb86-4465-a91d-09ed902b68bc","displayName":"","listItems":[],"description":"","defaultValue":"Required Configurations","exportToINI":false,"hidden":false,"optType":5,},
+    {"resourceType":"GMExtensionOption","resourceVersion":"1.0","name":"__extOptLabel","extensionId":null,"guid":"0c41b06f-fb86-4465-a91d-09ed902b68bc","displayName":"","listItems":[],"description":"","defaultValue":"--- REQUIRED ---","exportToINI":false,"hidden":false,"optType":5,},
     {"resourceType":"GMExtensionOption","resourceVersion":"1.0","name":"GJ_GAMEID","extensionId":null,"guid":"9d9a6b88-99c9-45b9-90bc-b3ddc9df4dd1","displayName":"Game ID","listItems":[],"description":"You can find your Game ID in the URL Bar of your GameJolt Game's Page.","defaultValue":"Example_ID","exportToINI":true,"hidden":false,"optType":2,},
     {"resourceType":"GMExtensionOption","resourceVersion":"1.0","name":"GJ_KEY","extensionId":null,"guid":"d7ced46d-0ce5-4741-ab0b-6d06250cb3db","displayName":"Private Key","listItems":[],"description":"NEVER GIVE YOUR PRIVATE KEY TO ANYONE! --- This is located in the Game API Section of your Game's Settings on GameJolt, under API Settings.","defaultValue":"Example_Key","exportToINI":true,"hidden":false,"optType":2,},
     {"resourceType":"GMExtensionOption","resourceVersion":"1.0","name":"GJ_REQUESTMODE","extensionId":null,"guid":"76513089-0e8f-47a9-aa69-e378a4631e6a","displayName":"Request Mode","listItems":[
         "GET",
-      ],"description":"Since the Game Jolt API supports both GET and POST requests, you can specify which one that FrostJolt will use for it's requests. (FrostJolt only supports GET requests at the moment.)","defaultValue":"GET","exportToINI":false,"hidden":false,"optType":6,},
+      ],"description":"Since the Game Jolt API supports both GET and POST requests, you can specify which one that FrostJolt will use for it's requests. (FrostJolt only supports GET requests at the moment.)","defaultValue":"GET","exportToINI":false,"hidden":true,"optType":6,},
     {"resourceType":"GMExtensionOption","resourceVersion":"1.0","name":"__extOptLabel1","extensionId":null,"guid":"ba737b6e-6fd8-492f-814c-e290411e6643","displayName":"","listItems":[],"description":"","defaultValue":"Additional Options","exportToINI":false,"hidden":false,"optType":5,},
     {"resourceType":"GMExtensionOption","resourceVersion":"1.0","name":"GJ_LOGRESPONSE","extensionId":null,"guid":"7c2d8cfc-d84d-4800-bb8a-85135b373296","displayName":"Log Server Responses","listItems":[],"description":"If you don't want FrostJolt to log server responses in the output console, untick this.","defaultValue":"True","exportToINI":true,"hidden":false,"optType":0,},
     {"resourceType":"GMExtensionOption","resourceVersion":"1.0","name":"GJ_MAKEBACKLOG","extensionId":null,"guid":"93afad2e-3e1f-41bf-8d56-34a177d2cf4b","displayName":"Enable Response Backlog","listItems":[],"description":"If you don't want FrostJolt to keep a backlog of previous server responses, untick this.","defaultValue":"True","exportToINI":true,"hidden":false,"optType":0,},
     {"resourceType":"GMExtensionOption","resourceVersion":"1.0","name":"GJ_LOGINIT","extensionId":null,"guid":"c319dbdf-96fa-4e43-a37f-cdd171d18a24","displayName":"Log on Game Start","listItems":[],"description":"When the game starts, FrostJolt automatically logs the Game ID and Private Key to confirm that everything works. Untick this box to disable this.","defaultValue":"True","exportToINI":true,"hidden":false,"optType":0,},
+    {"resourceType":"GMExtensionOption","resourceVersion":"1.0","name":"GJ_DATAFORM","extensionId":null,"guid":"d75a956f-5175-4cff-a2fa-936b68593304","displayName":"Data Format","listItems":[
+        "JSON",
+        "Keypair",
+        "Dump",
+      ],"description":"GameJolt's API Supports 4 different data formats. You can switch between three of them here.","defaultValue":"JSON","exportToINI":false,"hidden":true,"optType":6,},
   ],
   "exportToGame": true,
   "supportedTargets": -1,
