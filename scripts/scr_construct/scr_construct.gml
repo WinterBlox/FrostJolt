@@ -18,7 +18,7 @@ function FrostJolt() constructor
 		auth : function(_username, _token, _callback)
 		{
 			gj_user_authorize(_username, _token);
-			global.callback = _callback();
+			global.callback = _callback
 		},
 		
 		/// @desc Fetches information about a Game Jolt User's Account.
@@ -27,7 +27,7 @@ function FrostJolt() constructor
 		fetch : function(_username, _callback)
 		{
 			gj_user_fetch(_username);
-			global.callback = _callback();
+			global.callback = _callback
 		}
 	}
 	
@@ -46,24 +46,24 @@ function FrostJolt() constructor
 				case FJ_TROPHY_FETCH_FILTER.ALL:
 				gj_trophies_fetch_all(_username, _token);
 				show_debug_message("[FrostJolt] >>> Fetching all trophies...");
-				global.callback = _callback();
+				global.callback = _callback
 				break;
 				case FJ_TROPHY_FETCH_FILTER.UNACHIEVED:
 				gj_trophies_fetch_unachieved(_username, _token);
 				show_debug_message("[FrostJolt] >>> Fetching all unachieved trophies...");
-				global.callback = _callback();
+				global.callback = _callback
 				break;
 				case FJ_TROPHY_FETCH_FILTER.ACHIEVED:
 				gj_trophies_fetch_achieved(_username, _token);
 				show_debug_message("[FrostJolt] >>> Fetching all achieved trophies...");
-				global.callback = _callback();
+				global.callback = _callback
 				break;
 				case FJ_TROPHY_FETCH_FILTER.SPECIFIC:
 				if argument[4] != ""
 				{
 					gj_trophies_fetch_specific(_username, _token, argument[3]);
 					show_debug_message("[FrostJolt] >>> Fetching specific trophy with ID " + string(argument[3]) + "...");
-					global.callback = _callback();
+					global.callback = _callback
 				} else
 				{
 					show_debug_message("[FrostJolt] >>> ERROR: Trophy Fetch was called with the 'Specific' Filter, but no (or an invalid) trophy ID was provided. (" + string(argument[3]) + ")");
@@ -72,7 +72,7 @@ function FrostJolt() constructor
 				default:
 				gj_trophies_fetch_all(_username, _token);
 				show_debug_message("[FrostJolt] >>> Fetching all trophies...");
-				global.callback = _callback();
+				global.callback = _callback
 				break;
 			}
 			
@@ -86,7 +86,7 @@ function FrostJolt() constructor
 		unlock : function(_username, _token, _trophy_id, _callback)
 		{
 			gj_trophies_unlock(_username, _token, _trophy_id);
-			global.callback = _callback();
+			global.callback = _callback
 		},
 		
 		/// @desc Locks a unlocked trophy.
@@ -97,7 +97,7 @@ function FrostJolt() constructor
 		lock : function(_username, _token, _trophy_id, _callback)
 		{
 			gj_trophies_lock(_username, _token, _trophy_id);
-			global.callback = _callback();
+			global.callback = _callback
 		},
 	}
 		
@@ -110,7 +110,7 @@ function FrostJolt() constructor
 		open : function(_username, _token, _callback)
 		{
 			gj_session_open(_username, _token);
-			global.callback = _callback();
+			global.callback = _callback
 		},
 		
 		/// @desc Pings the Game Jolt Servers to indicate that a given session is still open. It's recommended to run this every 30 seconds or so to prevent a session from closing unexpectedly.
@@ -123,11 +123,11 @@ function FrostJolt() constructor
 			if argument[3] != ""
 			{
 				gj_session_ping(_username, _token, argument[3]);
-				global.callback = _callback();
+				global.callback = _callback
 			} else
 			{
 				gj_session_ping(_username, _token);
-				global.callback = _callback();
+				global.callback = _callback
 			}
 		},
 		
@@ -138,7 +138,7 @@ function FrostJolt() constructor
 		check : function(_username, _token, _callback)
 		{
 			gj_session_check(_username, _token);
-			global.callback = _callback();
+			global.callback = _callback
 		},
 		
 		/// @desc Checks to see if a session is open or not.
@@ -148,7 +148,7 @@ function FrostJolt() constructor
 		close : function(_username, _token, _callback)
 		{
 			gj_session_close(_username, _token);
-			global.callback = _callback();
+			global.callback = _callback
 		}
 		
 	}
@@ -160,7 +160,7 @@ function FrostJolt() constructor
 		get_tables : function(_callback)
 		{
 			gj_scores_get_tables();
-			global.callback = _callback();
+			global.callback = _callback
 		},
 		
 		/// @desc Returns a list of scores either for a user or globally for a game.
@@ -168,7 +168,7 @@ function FrostJolt() constructor
 		fetch : function(_callback)
 		{
 			gj_scores_fetch();
-			global.callback = _callback();
+			global.callback = _callback
 		},
 		
 		/// @desc Adds a score for a user or guest.
@@ -177,7 +177,7 @@ function FrostJolt() constructor
 		add : function(_val, _callback)
 		{
 			gj_scores_add(_val, _val);
-			global.callback = _callback();
+			global.callback = _callback
 		},
 		
 		/// @desc Returns the rank of a particular score on a score table.
@@ -189,11 +189,11 @@ function FrostJolt() constructor
 			if argument[2] != ""
 			{
 				gj_scores_getrank(_val, argument[2]);
-				global.callback = _callback();
+				global.callback = _callback
 			} else
 			{
 				gj_scores_getrank(_val);
-				global.callback = _callback();
+				global.callback = _callback
 			}
 		}
 		
@@ -208,7 +208,7 @@ function FrostJolt() constructor
 		fetch : function(_username, _token, _callback)
 		{
 			gj_friends_fetch(_username, _token);
-			global.callback = _callback();
+			global.callback = _callback
 		}
 		
 	}
@@ -224,11 +224,11 @@ function FrostJolt() constructor
 			if argument[1] != "" && argument[2] != ""
 			{
 				gj_ds_fetchkeys(argument[1], argument[2]);
-				global.callback = _callback();
+				global.callback = _callback
 			} else
 			{
 				gj_ds_fetchkeys();
-				global.callback = _callback();
+				global.callback = _callback
 			}
 		},
 		
@@ -242,11 +242,11 @@ function FrostJolt() constructor
 			if argument[2] != "" && argument[3] != ""
 			{
 				gj_ds_fetch(_key, argument[2], argument[3]);
-				global.callback = _callback();
+				global.callback = _callback
 			} else
 			{
 				gj_ds_fetch(_key);
-				global.callback = _callback();
+				global.callback = _callback
 			}
 		},
 
@@ -261,11 +261,11 @@ function FrostJolt() constructor
 			if argument[3] != "" && argument[4] != ""
 			{
 				gj_ds_set(_key, _str, argument[3], argument[4]);
-				global.callback = _callback();
+				global.callback = _callback
 			} else
 			{
 				gj_ds_set(_key, _str);
-				global.callback = _callback();
+				global.callback = _callback
 			}
 		},
 		
@@ -279,11 +279,11 @@ function FrostJolt() constructor
 			if argument[2] != "" && argument[3] != ""
 			{
 				gj_ds_destroy(_key, argument[2], argument[3]);
-				global.callback = _callback();
+				global.callback = _callback
 			} else
 			{
 				gj_ds_destroy(_key);
-				global.callback = _callback();
+				global.callback = _callback
 			}
 		}
 	
