@@ -5,6 +5,26 @@ global.response = undefined;
 global.gj_isoccupied = false;
 global.callback = undefined;
 
+var df = extension_get_option_value("ext_frostjolt", "GJ_DATAFORM");
+switch(df)
+{
+	case "JSON" :
+		global.dataform = "json";
+	break;
+
+	case "Keypair" :
+		global.dataform = "keypair";
+	break;
+
+	case "Dump" :
+		global.dataform = "dump";
+	break;
+
+	default:
+		global.dataform = "json";
+	break;
+}
+
 if extension_get_option_value("ext_frostjolt", "GJ_MAKEBACKLOG")
 {
 	global.backlog = ds_list_create();
