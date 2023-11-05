@@ -1,19 +1,40 @@
 {
-  "extensionId": null,
-  "resourceVersion": "1.0",
   "resourceType": "GMExtensionConfigSet",
   "configurables": {
     "0c41b06f-fb86-4465-a91d-09ed902b68bc": null,
-    "9d9a6b88-99c9-45b9-90bc-b3ddc9df4dd1": {},
-    "d7ced46d-0ce5-4741-ab0b-6d06250cb3db": {},
-    "ba737b6e-6fd8-492f-814c-e290411e6643": null,
-    "7c2d8cfc-d84d-4800-bb8a-85135b373296": null,
-    "93afad2e-3e1f-41bf-8d56-34a177d2cf4b": null,
-    "c319dbdf-96fa-4e43-a37f-cdd171d18a24": {},
-    "d75a956f-5175-4cff-a2fa-936b68593304": {
+    "9d9a6b88-99c9-45b9-90bc-b3ddc9df4dd1": {
       "Default": {
-        "value": "Keypair"
+        "value": "765026"
+      }
+    },
+    "d7ced46d-0ce5-4741-ab0b-6d06250cb3db": {
+      "Default": {
+        "value": "c895a3b665f60eef775109a3cd040532"
+      }
+    },
+    "ba737b6e-6fd8-492f-814c-e290411e6643": null,
+    "7c2d8cfc-d84d-4800-bb8a-85135b373296": {
+      "Default": {
+        "value": "True"
+      }
+    },
+    "93afad2e-3e1f-41bf-8d56-34a177d2cf4b": null,
+    "c319dbdf-96fa-4e43-a37f-cdd171d18a24": {
+      "Default": {
+        "value": "False"
+      }
+    },
+    "e28b38b5-f5f0-4cae-80db-8d02e80fff87": null,
+    "4370ab28-8f63-479a-853b-015505dfd6d7": {
+      "Default": {
+        "value": "True"
+      }
+    },
+    "740d0324-0842-475e-a125-dd86383b8feb": {
+      "Default": {
+        "value": "True"
       }
     }
-  }
+  },
+  "resourceVersion": "1.0"
 }

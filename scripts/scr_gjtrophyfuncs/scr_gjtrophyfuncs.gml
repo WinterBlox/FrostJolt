@@ -68,6 +68,8 @@ function gj_trophies_unlock(_username, _user_token, _trophy_id)
 	
 		var response = http_get("https://api.gamejolt.com/api/game/v1_2/trophies/add-achieved/?format=" + string(global.dataform) + "&game_id=" + string(global.gameid) + "&username=" + string(_username) + "&user_token=" + string(_user_token) + "&trophy_id=" + string(_trophy_id) + "&signature=" + string(hashed));
 	}
+	
+	gj_util_createtrophypopup("New Trophy Unlocked", "You've unlocked a new trophy!", spr_fj_gj_bronze_trophy);
 }
 
 /// @desc Re-locks an already unlocked trophy. Useful for resetting trophy data if necessary.

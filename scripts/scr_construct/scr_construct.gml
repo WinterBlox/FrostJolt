@@ -2,6 +2,8 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function FrostJolt() constructor 
 {
+	gj_util_createdebugpopup("Initialized", "Initialized FrostJolt");
+	
 	enum FJ_TROPHY_FETCH_FILTER
 	{
 		ALL,
@@ -18,6 +20,7 @@ function FrostJolt() constructor
 		auth : function(_username, _token, _callback)
 		{
 			gj_user_authorize(_username, _token);
+			gj_util_createdebugpopup("User Auth Debug", "Attempting to Connect Account " + string(_username));
 			global.callback = _callback
 		},
 		
@@ -27,6 +30,7 @@ function FrostJolt() constructor
 		fetch : function(_username, _callback)
 		{
 			gj_user_fetch(_username);
+			gj_util_createdebugpopup("User Fetch Debug", "Attempting to fetch user info...");
 			global.callback = _callback
 		}
 	}
@@ -40,7 +44,7 @@ function FrostJolt() constructor
 		/// @arg {string} [_trophy_id] If you provide the SPECIFIC filter, then provide this argument as well.
 		fetch : function(_username, _token, _callback)
 		{
-			
+			gj_util_createdebugpopup("Trophy Fetch Debug", "Attempting to trophies based on filter...");
 			switch(argument[3])
 			{
 				case FJ_TROPHY_FETCH_FILTER.ALL:
@@ -86,6 +90,7 @@ function FrostJolt() constructor
 		unlock : function(_username, _token, _trophy_id, _callback)
 		{
 			gj_trophies_unlock(_username, _token, _trophy_id);
+			gj_util_createdebugpopup("Trophy Unlock Debug", "Attempting to unlock trophy...");
 			global.callback = _callback
 		},
 		

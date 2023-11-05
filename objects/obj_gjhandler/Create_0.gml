@@ -1,6 +1,6 @@
-gj = new FrostJolt();
+global.gj = new FrostJolt();
 
-gj.user.auth("WinterBloxGames", "wKE4ya", function(){});
+alarm[0] = 60;
 
 
 
