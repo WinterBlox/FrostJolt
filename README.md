@@ -3,48 +3,53 @@ Public Repository for FrostJolt, a Code Library for GameMaker v20229.1.51 and on
 
 ## SUMMARY
 
-FrostJolt for GameMaker LTS is a library of Functions, Scripts, Guides and Tools designed to help you set up Game Jolt's Game API with GameMaker.At the time of writing this, this library contains things for the following:
+FrostJolt for GameMaker 2.3+ is a library of Functions, Scripts, Guides and Tools designed to help you set up Game Jolt's Game API with GameMaker.At the time of writing this, this library contains the following features/support for:
 
-- Data Stores (both global and user-specific)
-- Friends (fetching data about a user's friends or who they're friends with)
-- Scoreboards
-- Sessions (logging play sessions)
-- Trophies 
-- Users (authorizing and fetching info about them)
+- Datastores - Store Data from your GameMaker Game directly on Game Jolt's Servers, such as custom levels, save data, scores, etc
+- Friends - Get a list of your Game Jolt Friends and any that are currently online
+- Scores - Save scores to Game Jolt Scoreboards
+- Sessions - Keep track of the time people spend playing your game and get a list of players currently playing your game via the Game API Dashboard
+- Trophies - Create rewards for players to attain by achieving certain feats in-game
+- Users - Verify username & token information provided by the End User to your game, check the existence of any given account and fetch information about a user such as Nickname, Profile Picture, etc.
+- GUI - **(EXPERIMENTAL)** Custom GUI Elements that show events between Your Game and Game Jolt in a more user-friendly format
 
-But more features are coming! This library is actively being updated!
+### Pros/Cons:
 
-FrostJolt has been tested only on Windows. If you would like to help me test FrostJolt on other platform such as macOS or Linux, shoot me a Direct Message on Discord or Game Jolt!
-
-Discord Contact - WinterBlox1#3364
-
-## DOCUMENTATION
-
-For a guide on how to set-up FrostJolt for the first time, go to https://github.com/WinterBlox/FrostJolt/wiki
+- **(PRO)** Supports every feature the Game API has to offer except for Batch Requests
+- **(PRO)** Easy to setup - just provide the Game ID and Private Key and let FrostJolt do the rest
+- **(PRO)** Fully (but not easily) customizable to your liking
+- **(CON)** Only Supports JSON Format for Responses
+- **(CON)** Assumes you have basic knowledge of GameMaker
 
 ## INSTALLATION
 
-To install FrostJolt, simply drag and drop the .yymps file into GameMaker and it will Open a Prompt Asking you to select which files to import. Import all of the files into your GM Project.
+>[!NOTE]
+> FrostJolt has not yet been tested with the new GM Runtime Beta, so please keep this is mind when using FrostJolt on projects that use it.
 
-Alternatively, if drag and dropping doesnt work, Go to Tools > Import Local Package > Find the .yymps file in your Downloads and Select it, which will also open the prompt.
+To install FrostJolt, go to the [Releases](https://github.com/WinterBlox/FrostJolt/releases) section on GitHub or [download the .yymps file from Game Jolt](https://gamejolt.com/games/frostjoltgm/765026)
 
-## HOW IT WORKS
+Once you have the .yymps file in your Downloads Folder, drag and drop it into the GameMaker IDE with the project you want to use it in open.
 
-FrostJolt uses a relatively simple method of getting data from the Game Jolt Servers. Most of the functions you'll use are just the same thing with different parameters and endpoints. For example, gj_user_authorize starts off by building the body of the request that will be sent to the server, which in this case is `https://api.gamejolt.com/api/game/v1_2/users/auth/?game_id=<id here>&username=<username here>&user_token<user token here>`
+![image](https://github.com/WinterBlox/FrostJolt/assets/85455589/67b8e4f7-ef27-4de0-9d1e-88b629040f86)
 
-Once the basic request has been built, FrostJolt then appends your Private Key directly onto the end of the request. This whole string is then pumped through an MD5 (Message-Digest 5) Hashing Algorithm to generate a completely unique string of characters. Once that's done, the same request is built again, but this time the Private Key on the end is replaced with the `signature` parameter. This is a required parameter to guarantee that the request is coming from your game, and not a phony. If the signature is invalid, then the request will automatically be rejected.
+This window should pop up. Click 'FrostJolt Library' and then click 'Add'. If it pops up in the 'Resources to import' section, you're good to go! Click 'Import' and the library will appear in your Asset Browser!
 
-The final request looks something like this: `https://api.gamejolt.com/api/game/v1_2/users/auth/?game_id=<id here>&username=<username here>&user_token<user token here>&signature=<signature here>`
+![image](https://github.com/WinterBlox/FrostJolt/assets/85455589/abf6b84a-745a-472d-94db-48cebb828257)
 
-This whole string is then passed into the `http_get()` function as a string.
+We're not done yet, though! Next up, you need to provide FrostJolt (more specifically, it's extension) with your Game's Game ID and Private Key.
 
-The next part involves catching the response. This is where the gjhandler Object comes into play. The object has an Async - HTTP Event that is run every time a HTTP Request is made. Whenever an Async - HTTP Event is run, it generates a DS Map called `async_load` containing all of the response's data. 
+To get these, go to the Game API tab of your Game Dashboard on Game Jolt, and then into the API Settings tab. Here, your game's Game ID and Private Key lie for the taking.
 
-The Event first creates 5 Local Variables: `r_id`, `r_status`, `r_result`, `r_url` and `r_httpstat`. 
+![image](https://github.com/WinterBlox/FrostJolt/assets/85455589/21d56320-1057-430d-8fcd-6139d66499e9)
 
-All of these variables are set to one of 5 values in the `async_load` DS Map. These are `id`, `status`, `result`, `url` and `http_status`.
+Jot your Game ID and Private Key down and head back into GameMaker, and double-click on the `ext_frostjolt` extension in the Folder that was added to the Asset Browser.
 
-The `global.response` variable is then paired with the `json_parse()` function with the r_result variable as an argument.
-The contents of the `global.response` variable are then stored in the `global.backlog` DS List for accessing at a later date.
+![image](https://github.com/WinterBlox/FrostJolt/assets/85455589/5e8186e7-2ae2-4f23-a933-b51f1a15f7e2)
 
-After all this, FrostJolt neatly spits this as a notification in your output console.
+Go to the Extension Options down at the bottom and fill in the Game ID and Private Key fields.
+
+>[!WARNING]
+> NEVER GIVE YOUR PRIVATE KEY TO ANYONE! Your game's private key is used to validate that the requests your game make *are legitimate!* By giving away your private key, you are essentially letting anyone in the world send in requests pretending to be your game!
+
+
+
