@@ -2,16 +2,8 @@
   "resourceType": "GMExtensionConfigSet",
   "configurables": {
     "0c41b06f-fb86-4465-a91d-09ed902b68bc": null,
-    "9d9a6b88-99c9-45b9-90bc-b3ddc9df4dd1": {
-      "Default": {
-        "value": "765026"
-      }
-    },
-    "d7ced46d-0ce5-4741-ab0b-6d06250cb3db": {
-      "Default": {
-        "value": "c895a3b665f60eef775109a3cd040532"
-      }
-    },
+    "9d9a6b88-99c9-45b9-90bc-b3ddc9df4dd1": {},
+    "d7ced46d-0ce5-4741-ab0b-6d06250cb3db": {},
     "ba737b6e-6fd8-492f-814c-e290411e6643": null,
     "7c2d8cfc-d84d-4800-bb8a-85135b373296": {
       "Default": {
@@ -32,7 +24,7 @@
     },
     "740d0324-0842-475e-a125-dd86383b8feb": {
       "Default": {
-        "value": "True"
+        "value": "False"
       }
     }
   },
