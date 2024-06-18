@@ -3,7 +3,9 @@ Public Repository for FrostJolt, a Code Library for GameMaker v20229.1.51 and on
 
 ## SUMMARY
 
-FrostJolt for GameMaker 2.3+ is a library of Functions, Scripts, Guides and Tools designed to help you set up Game Jolt's Game API with GameMaker.At the time of writing this, this library contains the following features/support for:
+FrostJolt for GameMaker 2.3+ is a library of Functions, Scripts, Guides and Tools designed to help you set up Game Jolt's Game API with GameMaker.
+
+At the time of writing this, this library contains the following features/support for:
 
 - Datastores - Store Data from your GameMaker Game directly on Game Jolt's Servers, such as custom levels, save data, scores, etc
 - Friends - Get a list of your Game Jolt Friends and any that are currently online
@@ -15,16 +17,16 @@ FrostJolt for GameMaker 2.3+ is a library of Functions, Scripts, Guides and Tool
 
 ### Pros/Cons:
 
-- **(PRO)** Supports every feature the Game API has to offer except for Batch Requests
-- **(PRO)** Easy to setup - just provide the Game ID and Private Key and let FrostJolt do the rest
-- **(PRO)** Fully (but not easily) customizable to your liking
-- **(CON)** Only Supports JSON Format for Responses
-- **(CON)** Assumes you have basic knowledge of GameMaker
+- Supports every feature the Game API has to offer except for Batch Requests
+- Easy to setup - just provide the Game ID and Private Key and let FrostJolt do the rest
+- Fully (but not easily) customizable to your liking
+- Only Supports JSON Format for Responses
+- Assumes you have basic knowledge of GameMaker
 
 ## INSTALLATION
 
 >[!NOTE]
-> FrostJolt has not yet been tested with the new GM Runtime Beta, so please keep this is mind when using FrostJolt on projects that use it.
+> FrostJolt has not yet been tested with the new GM Runtime Beta, so please keep this in mind when using FrostJolt on projects that use it.
 
 To install FrostJolt, go to the [Releases](https://github.com/WinterBlox/FrostJolt/releases) section on GitHub or [download the .yymps file from Game Jolt](https://gamejolt.com/games/frostjoltgm/765026)
 
@@ -49,7 +51,10 @@ Jot your Game ID and Private Key down and head back into GameMaker, and double-c
 Go to the Extension Options down at the bottom and fill in the Game ID and Private Key fields.
 
 >[!WARNING]
-> NEVER GIVE YOUR PRIVATE KEY TO ANYONE! Your game's private key is used to validate that the requests your game make *are legitimate!* By giving away your private key, you are essentially letting anyone in the world send in requests pretending to be your game!
+> NEVER GIVE YOUR PRIVATE KEY TO ANYONE! Your game's private key is used to validate that the requests your game makes *are legitimate!* By giving away your private key, you are essentially letting anyone in the world send in requests pretending to be your game!
 
+## Version Compatibility
+
+**To be added**
 
 
