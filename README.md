@@ -21,7 +21,7 @@ At the time of writing this, this library contains the following features/suppor
 - Easy to setup - just provide the Game ID and Private Key and let FrostJolt do the rest
 - Fully (but not easily) customizable to your liking
 - Only Supports JSON Format for Responses
-- Assumes you have basic knowledge of GameMaker
+- Assumes you have basic knowledge of GameMaker (this isnt really a con but whatever)
 
 ## INSTALLATION
 
