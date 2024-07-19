@@ -102,6 +102,7 @@ function FrostJolt() constructor
 		lock : function(_username, _token, _trophy_id, _callback)
 		{
 			gj_trophies_lock(_username, _token, _trophy_id);
+			gj_util_createdebugpopup("Trophy Lock Debug", "Attempting to lock trophy...");
 			global.callback = _callback
 		},
 	}
@@ -115,6 +116,7 @@ function FrostJolt() constructor
 		open : function(_username, _token, _callback)
 		{
 			gj_session_open(_username, _token);
+			gj_util_createdebugpopup("Session Open Debug", "Attempting to open session...");
 			global.callback = _callback
 		},
 		
@@ -125,6 +127,7 @@ function FrostJolt() constructor
 		/// @arg {string} [_state] The state the session should be in. Can be either "active" or "idle". (OPTIONAL)
 		ping : function(_username, _token, _callback)
 		{
+			gj_util_createdebugpopup("Session Ping Debug", "Pinging...");
 			if argument[3] != ""
 			{
 				gj_session_ping(_username, _token, argument[3]);
@@ -142,6 +145,7 @@ function FrostJolt() constructor
 		/// @arg {function} _callback The function to call upon request fulfillment.
 		check : function(_username, _token, _callback)
 		{
+			gj_util_createdebugpopup("Session Check Debug", "Checking Session...");
 			gj_session_check(_username, _token);
 			global.callback = _callback
 		},
@@ -152,6 +156,7 @@ function FrostJolt() constructor
 		/// @arg {function} _callback The function to call upon request fulfillment.
 		close : function(_username, _token, _callback)
 		{
+			gj_util_createdebugpopup("Session Close Debug", "Attempting to close session...");
 			gj_session_close(_username, _token);
 			global.callback = _callback
 		}
@@ -164,6 +169,7 @@ function FrostJolt() constructor
 		/// @arg {function} _callback The function to call upon request fulfillment.
 		get_tables : function(_callback)
 		{
+			gj_util_createdebugpopup("Scores Get Tables Debug", "Attempting to get tables...");
 			gj_scores_get_tables();
 			global.callback = _callback
 		},
@@ -172,6 +178,7 @@ function FrostJolt() constructor
 		/// @arg {function} _callback The function to call upon request fulfillment.
 		fetch : function(_callback)
 		{
+			gj_util_createdebugpopup("Scores Fetch Debug", "Attempting to fetch scores...");
 			gj_scores_fetch();
 			global.callback = _callback
 		},
@@ -181,6 +188,7 @@ function FrostJolt() constructor
 		/// @arg {function} _callback The function to call upon request fulfillment.
 		add : function(_val, _callback)
 		{
+			gj_util_createdebugpopup("Scores Add Debug", "Attempting to add score...");
 			gj_scores_add(_val, _val);
 			global.callback = _callback
 		},
@@ -191,6 +199,7 @@ function FrostJolt() constructor
 		/// @arg {string} [_table_id] The ID of the score table from which you want to get the rank. (OPTIONAL)
 		get_rank : function(_val, _callback)
 		{
+			gj_util_createdebugpopup("Session Rank Fetch Debug", "Attempting to get player rank...");
 			if argument[2] != ""
 			{
 				gj_scores_getrank(_val, argument[2]);
@@ -212,6 +221,7 @@ function FrostJolt() constructor
 		/// @arg {function} _callback The function to call upon request fulfillment.
 		fetch : function(_username, _token, _callback)
 		{
+			gj_util_createdebugpopup("Friends Fetch", "Attempting to fetch friends...");
 			gj_friends_fetch(_username, _token);
 			global.callback = _callback
 		}
@@ -226,6 +236,7 @@ function FrostJolt() constructor
 		/// @arg {string} [_token] The user's game token
 		get_keys : function(_callback)
 		{
+			gj_util_createdebugpopup("DS Get Keys Debug", "Attempting to get Datastore Keys...");
 			if argument[1] != "" && argument[2] != ""
 			{
 				gj_ds_fetchkeys(argument[1], argument[2]);
@@ -244,6 +255,7 @@ function FrostJolt() constructor
 		/// @arg {string} [_token] The user's game token
 		read : function(_key, _callback)
 		{
+			gj_util_createdebugpopup("DS Read Debug", "Reading from DS Key...");
 			if argument[2] != "" && argument[3] != ""
 			{
 				gj_ds_fetch(_key, argument[2], argument[3]);
@@ -263,6 +275,7 @@ function FrostJolt() constructor
 		/// @arg {string} [_token] The user's game token
 		write : function(_key, _str, _callback)
 		{
+			gj_util_createdebugpopup("DS Write Debug", "Attempting to write to DS Key...");
 			if argument[3] != "" && argument[4] != ""
 			{
 				gj_ds_set(_key, _str, argument[3], argument[4]);
@@ -281,6 +294,7 @@ function FrostJolt() constructor
 		/// @arg {string} [_token] The user's game token
 		destroy : function(_key, _callback)
 		{
+			gj_util_createdebugpopup("DS Destroy Debug", "Attempting to destroy DS Key...");
 			if argument[2] != "" && argument[3] != ""
 			{
 				gj_ds_destroy(_key, argument[2], argument[3]);

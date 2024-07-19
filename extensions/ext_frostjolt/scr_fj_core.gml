@@ -3,7 +3,8 @@ global.gameid = extension_get_option_value("ext_frostjolt", "GJ_GAMEID");
 global.key = extension_get_option_value("ext_frostjolt", "GJ_KEY");
 global.response = undefined;
 global.gj_isoccupied = false;
-global.callback = undefined;
+global.callback = function(){};
+global.backlog = ds_list_create();
 
 var df = extension_get_option_value("ext_frostjolt", "GJ_DATAFORM");
 switch(df)

@@ -8,7 +8,10 @@ function gj_util_determinesuccess()
 		return "INVALID GAME ID";
 	} else if global.response.response.message == "No such user with the credentials passed in could be found."
 	{
-		return "INVALID CREDENTIALS";
+		return "INVALID CREDENTIALS / USER DOES NOT EXIST";
+	} else if global.response.response.message == "The signature you entered for the request is invalid."
+	{
+		return "INVALID SIGNATURE";	
 	} else if !gj_util_checkformessage()
 	{
 		return "SERVER PROVIDED NO MESSAGE, REFER TO FULL RESPONSE";	

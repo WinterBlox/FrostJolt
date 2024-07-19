@@ -1,5 +1,5 @@
 {
-  "resourceType": "GMExtensionConfigSet",
+  "$GMExtensionConfigSet": "GMExtensionConfigSet",
   "configurables": {
     "0c41b06f-fb86-4465-a91d-09ed902b68bc": null,
     "9d9a6b88-99c9-45b9-90bc-b3ddc9df4dd1": {},
@@ -10,23 +10,11 @@
         "value": "True"
       }
     },
-    "93afad2e-3e1f-41bf-8d56-34a177d2cf4b": null,
-    "c319dbdf-96fa-4e43-a37f-cdd171d18a24": {
-      "Default": {
-        "value": "False"
-      }
-    },
+    "93afad2e-3e1f-41bf-8d56-34a177d2cf4b": {},
+    "c319dbdf-96fa-4e43-a37f-cdd171d18a24": {},
     "e28b38b5-f5f0-4cae-80db-8d02e80fff87": null,
-    "4370ab28-8f63-479a-853b-015505dfd6d7": {
-      "Default": {
-        "value": "True"
-      }
-    },
-    "740d0324-0842-475e-a125-dd86383b8feb": {
-      "Default": {
-        "value": "False"
-      }
-    }
-  },
-  "resourceVersion": "1.0"
+    "4370ab28-8f63-479a-853b-015505dfd6d7": {},
+    "740d0324-0842-475e-a125-dd86383b8feb": {},
+    "564a0426-3f17-4cc9-bfc4-2f4eee56900a": null
+  }
 }

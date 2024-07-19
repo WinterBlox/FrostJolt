@@ -10,6 +10,8 @@ global.response = {};
 
 #region ----- JSON Data Format -----
 
+gj_util_createdebugpopup("Asynchronous HTTP Event", "Parsing Server Response");
+
 if global.dataform == "json"
 {
 	global.response = json_parse(string(r_result));
