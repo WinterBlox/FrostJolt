@@ -1,3 +1,8 @@
+> [!CAUTION]
+> This library is no longer being maintained. I highly discourage using this for production, as it may be victim to security risks.\
+> I cannot make any guarantees as to whether it will start being maintained again.\
+> My best recommendation if you need GameMaker-GameJolt Communication is to make the HTTP requests yourself by referring to the Game API.
+
 # FrostJolt
 Public Repository for FrostJolt, a Code Library for GameMaker v20229.1.51 and onwards that integrates Game Jolt's Game API Into a GameMaker Project.
 
