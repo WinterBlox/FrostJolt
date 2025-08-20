@@ -1,6 +1,6 @@
 > [!CAUTION]
 > This library is no longer being maintained. I highly discourage using this for production, as it may be victim to security risks.\
-> I cannot make any guarantees as to whether it will start being maintained again.\
+> I cannot make any guarantees as to whether it will start being maintained again. I do not have as much free time as I used to, and additionally I have lost my spark for GameMaker in general as I'm moving over to Unity Development.\
 > My best recommendation if you need GameMaker-GameJolt Communication is to make the HTTP requests yourself by referring to the Game API.
 
 # FrostJolt
